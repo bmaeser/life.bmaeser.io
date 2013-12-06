@@ -89,7 +89,7 @@ h1{
 </style>
 <header>
 	<h1 id="title">Life</h1>
-	<a href="https://github.com/cheeaun/life">Fork me</a>
+	<a href="https://github.com/bmaeser/life">Fork me</a>
 </header>
 <div id="life"></div>
 <script>
@@ -247,17 +247,6 @@ h1{
 				}
 			}
 
-			// Parse Markdown links in the text
-			// credit: http://stackoverflow.com/a/9268827
-			var link = null;
-			while(link = d.text.match(/\[([^\]]+)\]\(([^)"]+)(?: \"([^\"]+)\")?\)/)) {
-				var link_attr = "";
-				if (link[3] !== undefined) {
-					link_attr = " title='" + link[3] + "'";
-				}
-				d.text = d.text.replace(link[0], "<a href='" + link[2] + "'" + link_attr + ">" + link[1] + "</a>");
-			}
-			
 			return '<div class="event" style="margin-left: ' + offset.toFixed(2) + 'px">'
 				+ '<div class="time" style="width: ' + width.toFixed(2) + 'px"></div>'
 				+ '<b>' + d.time.title + '</b> ' + d.text + '&nbsp;&nbsp;'
